@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neighbourhood Map</title>
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300">-->
+    <link rel="stylesheet" href="Css/font-awesome.min.css">
+    <link rel="stylesheet" href="Css/styles.css">
+</head>
+<body>
+<div id="container" class="container">
+
+    <div class="search_container">
+        <input type="text" id="Input_Filter" data-bind="textInput: Input_txt, valueUpdate:'afterkeydown'" placeholder="Search for location..">
+
+        <ul id="locations_list" data-bind="foreach: locations_filtered_list">
+            <li data-bind= "text: name, click: $root.locationClicked"></li>
+        </ul>
+    </div>
+
+    <div id="map" class="map"></div>
+</div>
+<script src="Js/jQuery.js"></script>
+<script src="Js/knockout-min.js"></script>
+
+<script async defer
+        src=
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCnISoukWYdzdZV_-mQ1LS0nyxRPTXtYKE&v=3&callback=InitMap" onerror="map_Error_handle()">
+    </script>
+<script src="Js/NeighbourhoodMap.js"></script>
+</body>
+</html>
